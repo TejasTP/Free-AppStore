@@ -7,6 +7,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    if 'HEROKU' in os.environ:
+        return 'HEROKU'
     return 'omg wow'
 
 if __name__ == "__main__" and 'HEROKU' not in os.environ:
