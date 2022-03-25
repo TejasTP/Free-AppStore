@@ -5,12 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .animation{
+            width: 235px;
+            background-color: transparent;
+
+            animation: itsme 5s infinite;
+        }
+        @keyframes itsme {
+            0%{transform: rotate(0deg);}
+            100%{transform: rotate(360deg);}
+
+        }
+    </style>
 </head>
 <body>
-    <button>hello</button>
+    <h1>This is a moving dragon Animation</h1>
+    <div class="animation">
+        <img src="dragon.png" alt="dragn" width="234px" >
+    </div>
 </body>
-<script src="/static/request.js"></script>
-<script>
-
-</script>
 </html>
