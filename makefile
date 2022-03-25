@@ -6,3 +6,5 @@ req:
 	pip freeze > requirements.txt
 procfile:
 	echo "web: gunicorn app:app" > Procfile
+run:
+	python app.py

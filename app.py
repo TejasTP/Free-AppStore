@@ -1,15 +1,11 @@
-import json
+from program import *
 import os
-from flask import *
-from flask_sqlalchemy import *
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def index():
-    if 'HEROKU' in os.environ:
-        return 'HEROKU'
-    return 'omg wow'
+    return render_template('index.html')
 
 if __name__ == "__main__" and 'HEROKU' not in os.environ:
     app.run(debug=True)
