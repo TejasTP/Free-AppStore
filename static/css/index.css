@@ -3,32 +3,39 @@
     margin: 0;
     padding: 0;
     font-family: 'Raleway', 'sans-serif';
+    -webkit-font-smoothing: antialiased;
 }
 
 nav{
     display: block;
     width: 100%;
     overflow: hidden;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.86);
+    backdrop-filter: blur(24px) saturate(180%);
 }
 
 nav .upper-nav{
     display: flex;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(25px) saturate(170%);
 }
 
 nav .upper-nav .object{
     display: inline-block;
     position: relative;
     text-decoration: none;
-    padding: 16px 20px;
-    color: white;
-    cursor: pointer;
+    padding: 16px 17px;
+    color: rgba(255, 255, 255, 0.85);
+    cursor: default;
     user-select: none;
+    transition: 200ms;
+}
+
+nav .upper-nav .object:hover{
+    color: rgb(255, 255, 255);
 }
 
 nav .upper-nav .object::before {
@@ -37,31 +44,71 @@ nav .upper-nav .object::before {
     left    : 50%;
     bottom  : 0;
     transform: translate(-50%, 0%);
-    height  : 1px;
+    height: 3px;
+    background-color: rgba(73, 29, 155, 0);
+    border-radius: 1px;
     width   : 0%;
-    border-bottom: 3px solid rgba(173, 216, 230, 0);
     transition: 200ms;
 }
 
 nav .upper-nav .object:hover::before {
-    content : "";
-    position: absolute;
-    left    : 50%;
-    bottom  : 0;
-    transform: translate(-50%, 0%);
+    height: 3px;
+    background-color: rgba(73, 29, 155, 0.7);
     width   : 70%;
-    border-bottom: 3px solid rgb(65, 24, 141);
+    transition: 200ms;
+}
+
+nav .upper-nav .object:active::before{
+    height: 3px;
+    background-color: rgba(73, 29, 155, 0.7);
+    width   : 45%;
     transition: 200ms;
 }
 
 nav .lower-nav{
     display: flex;
+    display: none;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(25px) saturate(170%);
+    border-top: 2px solid rgba(0, 52, 92, 0.4);
 }
 
 nav .lower-nav .object{
     display: inline-block;
-    color: white;
+    position: relative;
+    text-decoration: none;
+    padding: 9px 18px;
+    color: rgba(255, 255, 255, 0.85);
+    cursor: default;
+    user-select: none;
+}
+
+nav .lower-nav .object:hover{
+    color: rgba(255, 255, 255);
+}
+
+nav .lower-nav .object::before {
+    content : "";
+    position: absolute;
+    left    : 50%;
+    bottom  : 0;
+    transform: translate(-50%, 0%);
+    height: 3px;
+    background-color: rgba(73, 29, 155, 0);
+    border-radius: 1px;
+    width   : 0%;
+    transition: 200ms;
+}
+
+nav .lower-nav .object:hover::before {
+    height: 3px;
+    background-color: rgba(73, 29, 155, 0.7);
+    width   : 70%;
+    transition: 200ms;
+}
+
+nav .lower-nav .object:active::before{
+    height: 3px;
+    background-color: rgba(73, 29, 155, 0.7);
+    width   : 45%;
+    transition: 200ms;
 }
