@@ -1,7 +1,7 @@
 all:
 	git add .
 	git commit -a --allow-empty-message -m ''
-	git push -u origin main
+	git push -u origin main -f
 req:
 	pip freeze > requirements.txt
 procfile:
